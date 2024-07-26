@@ -3,6 +3,7 @@ body {
   padding: 0%;
   font-family: sans-serif;
   box-sizing: border-box;
+  background-color: #1f1e1e;
 }
 
 .Nav_container {
@@ -37,7 +38,7 @@ body {
 
 
 .list_container {
-  min-height: 100vh;
+  min-height: 85vh;
   width: 100%;
   justify-content: center;
   background-color: #1f1e1e;
@@ -272,6 +273,7 @@ hr {
 
   .Icons {
     width: 30%;
+    margin-top: -20px;
   }
 
   .list_items {
