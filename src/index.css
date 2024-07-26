@@ -1,13 +1,334 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0%;
+  font-family: sans-serif;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.Nav_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80px;
+  width: 100%;
+  background-color: #414141;
+  caret-color: transparent;
+}
+
+.menucard {
+  height: 100%;
+  width: 40%;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+
+.menucard button {
+  height: 50%;
+  width: 35%;
+  font-size: large;
+  color: white;
+  border: none;
+  font-weight: bolder;
+  font-size: 25px;
+  background-color: green;
+}
+
+
+.list_container {
+  min-height: 100vh;
+  width: 100%;
+  justify-content: center;
+  background-color: #1f1e1e;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.input_task {
+  display: flex;
+  height: 130px;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  box-shadow: 0px 5px 7px rgb(27, 27, 27);
+  background-color: #353434;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.box_card {
+  width: 40%;
+  height: 80%;
+  font-size: 10px;
+}
+
+hr {
+  height: 0px;
+  margin-top: -20px;
+  width: 95%;
+}
+
+.title_heading {
+  margin-left: 15px;
+  height: 15%;
+  color: white;
+  font-size: 20px;
+}
+
+.title_input {
+  margin-left: 15px;
+  height: 45%;
+  width: 90%;
+  font-size: 15px;
+  padding-left: 10px;
+  box-sizing: border-box;
+  border: none;
+  outline: none;
+
+}
+
+.input_btn {
+  width: 20%;
+  height: 65%;
+  display: flex;
+  align-items: end;
+  justify-content: center;
+}
+
+.input_btn button {
+  height: 55%;
+  width: 50%;
+  margin-bottom: 5px;
+  border: none;
+  color: white;
+  background-color: green;
+  cursor: pointer;
+  font-size: 16px;
+  border: none;
+}
+
+.input_btn button:hover {
+  background-color: rgb(18, 166, 18);
+}
+
+.task_list_section {
+  width: 50%;
+  min-height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  caret-color: transparent;
+  background-color: #353434;
+  box-shadow: 0px 5px 7px rgb(27, 27, 27);
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.menu {
+  width: 100%;
+  height: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.menu_icon {
+  width: 70%;
+  height: 100%;
+}
+
+.menu .menu_btn {
+  width: 23%;
+  height: 100%;
+  font-size: 15px;
+  cursor: pointer;
+  margin-left: 15px;
+  color: white;
+  border: none;
+  background-color: rgb(71, 71, 71);
+}
+
+.menu_btn.active {
+  background-color: green;
+}
+
+.remove {
+  width: 20%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.remove button {
+  width: 70%;
+  height: 100%;
+  font-size: 15px;
+  cursor: pointer;
+  color: white;
+  border: none;
+  background-color: rgb(71, 71, 71);
+}
+
+.task_list {
+  width: 100%;
+  height: 50vh;
+  list-style: none;
+}
+
+.ul_list {
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  margin-top: 10px;
+}
+
+.list_items {
+  height: 30%;
+  width: 90%;
+  margin: auto;
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  background-color: #414141;
+  box-shadow: 0px 3px 5px rgb(43, 42, 42);
+  border-radius: 10px;
+}
+
+.content {
+  width: 85%;
+  height: 100%;
+}
+
+.content p {
+  margin-left: 15px;
+  margin-top: 10px;
+  color: white;
+}
+
+.Icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 15%;
+  gap: 10px;
+  height: 100%;
+}
+
+.list_items h3 {
+  height: 15px;
+  margin-top: 10px;
+  margin-left: 15px;
+  color: green;
+  font-size: 25px;
+  padding: 0px;
+}
+
+.p2_tag {
+  font-size: 16px;
+  margin-left: 15px;
+}
+
+.p_tag {
+  height: 10%;
+  font-size: 10px;
+  margin-left: 15px;
+}
+
+@media(max-width: 1300px) {
+
+  .input_task {
+    width: 97%;
+    margin-top: 20px;
+  }
+
+  .task_list_section {
+    width: 97%;
+
+  }
+
+  .menucard {
+    width: 90%;
+  }
+
+  .menucard button {
+    font-size: 18px;
+  }
+
+  .list_container {
+    justify-content: start;
+  }
+
+  .content {
+
+    width: 70%;
+  }
+
+  .Icons {
+    width: 30%;
+  }
+
+  .list_items {
+    width: 95%;
+    height: 35%;
+  }
+
+  .menu .menu_btn {
+    width: 38%;
+    font-size: 14px;
+    margin-left: 10px;
+  }
+
+  .remove {
+    width: 30%;
+
+  }
+
+  .remove button {
+    width: 100%;
+    font-size: 14px;
+  }
+
+  .p_tag {
+    font-size: 12px;
+    height: 15%;
+  }
+
+  .input_btn {
+    width: 25%;
+
+  }
+
+  .input_btn button {
+    height: 57%;
+    width: 100%;
+    margin-bottom: 7px;
+    font-size: 14px;
+  }
+
+  hr {
+    margin-top: -10px;
+  }
+
+  .title_input {
+    margin-left: 5px;
+    width: 95%;
+  }
+
+  .box_card {
+    width: 49%;
+
+  }
+
+  .title_heading {
+    margin-left: 5px;
+    height: 15%;
+    font-size: 18px;
+  }
 }
