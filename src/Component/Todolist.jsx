@@ -2,7 +2,7 @@ import React, { useEffect, useReducer, useState } from 'react'
 import reducer from "../Reducer/Reducer"
 import DeleteIcon from '@mui/icons-material/Delete';
 import DoneIcon from '@mui/icons-material/Done';
-
+import EditIcon from '@mui/icons-material/Edit';
 
 const Todolist = () => {
     const [active, setActive] = useState(true);
@@ -61,6 +61,23 @@ const Todolist = () => {
         dispatch({ type: "REMOVEALL" })
     }
 
+    const edit = (id, title, descrip) => {
+
+        if (title === "" || des === "") {
+
+            dispatch({ type: "EDIT", payload: id });
+
+            setTitle(title);
+            setDes(descrip);
+        } else {
+            alert("You Can Not edit two Task at Once");
+        }
+
+
+    }
+
+
+
     useEffect(() => {
 
         localStorage.setItem("mylist", JSON.stringify(state.list));
@@ -87,15 +104,15 @@ const Todolist = () => {
                     <div className='input_btn'>
                         <button onClick={addtask}>Add</button>
                     </div>
-                    
+
                 </div>
-                
+
                 <div className="task_list_section">
-                <hr />
+                    <hr />
                     <div className="menu">
                         <div className="menu_icon">
-                            <button className= { active ? 'menu_btn active' : 'menu_btn' } onClick={() => setActive(true)}> {state.list.length ? `To Do (${state.list.length}) ` : "To Do"}    </button>
-                            <button className= { active ? 'menu_btn' : 'menu_btn active' } onClick={() => setActive(false)}>{state.list2.length ? `Completed (${state.list2.length})` : "Completed"}</button>
+                            <button className={active ? 'menu_btn active' : 'menu_btn'} onClick={() => setActive(true)}> {state.list.length ? `To Do (${state.list.length}) ` : "To Do"}    </button>
+                            <button className={active ? 'menu_btn' : 'menu_btn active'} onClick={() => setActive(false)}>{state.list2.length ? `Completed (${state.list2.length})` : "Completed"}</button>
                         </div>
                         <div className="remove">
                             <button onClick={removeAll}>Remove All</button>
@@ -117,14 +134,26 @@ const Todolist = () => {
                                                         <p>{curElem.description}</p>
                                                     </div>
                                                     <div className='Icons'>
-                                                        <DeleteIcon fontSize="large" style={{ color: 'red', cursor: "pointer" }} onClick={() => remove(curElem.id)} />
-                                                        <DoneIcon fontSize="large" style={{ color: 'green' ,cursor: "pointer" }} onClick={() => move(curElem.id)} />
+                                                        <div className='icon1'>
+                                                            <DeleteIcon fontSize="large" style={{ color: 'red', cursor: "pointer" }} className='delete' onClick={() => remove(curElem.id)} />
+                                                            <p className='hidedelete'>Delete</p>
+                                                        </div>
+                                                        <div className='icon1'>
+                                                            <DoneIcon fontSize="large" style={{ color: 'green', cursor: "pointer" }} className='done' onClick={() => move(curElem.id)} />
+                                                            <p className='hidedone'>Done</p>
+                                                        </div>
+                                                        <div className='icon1'>
+                                                            <EditIcon  style={{ color: 'white', cursor: "pointer" }} className='edit' onClick={() => edit(curElem.id, curElem.title, curElem.description)} />
+                                                            <p className='hideedit'>Edit</p>
+                                                        </div>
+
+
                                                     </div>
                                                 </li>
                                             )
 
                                         })
-                                    }
+                                    }  
 
                                 </ul>
                             </div>
@@ -140,7 +169,11 @@ const Todolist = () => {
                                                     <p className='p_tag'>Created at: {elem.id}</p>
                                                 </div>
                                                 <div className='Icons'>
-                                                    <DeleteIcon fontSize="large" style={{ color: 'red' , cursor: "pointer"}} onClick={() => remove(elem.id)} />
+                                                    <div className='icon1'>
+                                                        <DeleteIcon fontSize="large" style={{ color: 'red', cursor: "pointer" }} className='delete' onClick={() => remove(elem.id)} />
+                                                        <p className='hidedelete'>Delete</p>
+                                                    </div>
+
                                                 </div>
 
                                             </li>

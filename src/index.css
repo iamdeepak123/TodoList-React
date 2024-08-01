@@ -203,7 +203,7 @@ hr {
 }
 
 .content {
-  width: 85%;
+  width: 80%;
   height: 100%;
 }
 
@@ -217,10 +217,42 @@ hr {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 15%;
-  gap: 10px;
+  width: 22%;
+  height: 100%;
+  gap: 0px;
+}
+
+.icon1{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   height: 100%;
 }
+
+.hidedelete, .hideedit, .hidedone{
+ visibility: hidden;
+}
+
+.delete:hover + .hidedelete{
+  visibility: visible;
+  color: white;
+}
+
+.done:hover + .hidedone{
+  visibility: visible;
+  color: white;
+}
+
+.edit{
+  font-size: 18px;
+}
+.edit:hover + .hideedit{
+  visibility: visible;
+  color: white;
+}
+
+
 
 .list_items h3 {
   height: 15px;
@@ -273,7 +305,7 @@ hr {
 
   .Icons {
     width: 30%;
-    margin-top: -20px;
+   
   }
 
   .list_items {

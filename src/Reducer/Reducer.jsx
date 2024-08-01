@@ -48,6 +48,18 @@ const Reducer = (state, action) => {
     }
 
 
+    if (action.type === "EDIT") {
+        let updatelist = state.list.filter((elem) => elem.id !== action.payload);
+
+      
+        return {
+            ...state,
+           
+            list: updatelist,
+        }
+    }
+
+
     return state
 }
 
