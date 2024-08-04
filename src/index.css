@@ -190,6 +190,10 @@ hr {
   margin-top: 10px;
 }
 
+.ul_list::-webkit-scrollbar{
+  height: 0px;
+}
+
 .list_items {
   height: 30%;
   width: 90%;
